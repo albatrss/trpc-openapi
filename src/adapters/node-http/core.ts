@@ -182,6 +182,7 @@ export const createOpenApiNodeHttpHandler = <
       const headers = meta?.headers ?? {};
       const body: OpenApiErrorResponse = {
         ...error,
+        name: undefined,
         message: isInputValidationError
           ? 'Input validation failed'
           : errorShape?.message ?? error.message ?? 'An error occurred',
