@@ -18,7 +18,7 @@ export const TRPC_ERROR_CODE_HTTP_STATUS: Record<TRPCError['code'], number> = {
 };
 
 export function getErrorFromUnknown(cause: unknown): TRPCError {
-  if (cause instanceof Error && cause.name === 'TRPCError') {
+  if (cause instanceof Error && cause instanceof TRPCError) {
     return cause as TRPCError;
   }
 
