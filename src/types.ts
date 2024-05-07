@@ -74,6 +74,6 @@ export type OpenApiErrorResponse = {
   message: string;
   code: TRPC_ERROR_CODE_KEY;
   issues?: ZodIssue[];
-};
+} & Record<string, any>;
 
 export type OpenApiResponse<D = any> = OpenApiSuccessResponse<D> | OpenApiErrorResponse;
